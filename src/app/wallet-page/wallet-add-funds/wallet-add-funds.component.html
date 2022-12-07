@@ -1,0 +1,11 @@
+<p-panel header="Login">
+<div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px"><label for="inputWalletId"><h1>Enter your wallet ID:</h1></label>
+    <p-inputNumber inputId="inputWalletId" [(ngModel)]="walletId"></p-inputNumber>
+    <label for="inputWalletAmount"><h1>Enter your wallet ID:</h1></label>
+    <p-inputNumber inputId="inputWalletAmount" [(ngModel)]="amountToAdd"></p-inputNumber>
+    <p-button label="Add fund" (click)=onAddFund()></p-button>
+</div>
+</p-panel>
+
+<h3>balance is: </h3>{{balanceAmount}}
+

@@ -1,0 +1,5 @@
+<label for="inputWalletId"><h1>Enter your wallet ID:</h1></label>
+<p-inputNumber inputId="inputWalletId" [(ngModel)]="walletId"></p-inputNumber>
+<p-button label="get balance" (click)=onGetBalance()></p-button>
+
+<h3>balance is: </h3>{{balance}}
