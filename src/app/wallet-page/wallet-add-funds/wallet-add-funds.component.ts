@@ -11,6 +11,7 @@ export class WalletAddFundsComponent {
   walletId:number=0;
   amountToAdd:number=0;
   balanceAmount:number;
+  errorMsg:string;
   constructor(private walletDetails:WalletDetails, private walletRestService:WalletRestServiceService){}
   
 
@@ -19,7 +20,8 @@ export class WalletAddFundsComponent {
     this.walletDetails.amount = this.amountToAdd;
     if(this.walletId && this.amountToAdd){
       this.walletRestService.addFundsToWallet(this.walletDetails).subscribe(
-        (data)=>{this.balanceAmount=data;}
+        (data)=>{this.balanceAmount=data;},
+        (error)=>{this.errorMsg = error.message;}
       );
     }
   }

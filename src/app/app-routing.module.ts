@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserAuthGuard } from './auth/user-auth.guard';
 import { WalletAdminComponent } from './wallet-admin/wallet-admin.component';
 import { WalletLoginComponent } from './wallet-login/wallet-login.component';
 import { WalletAddFundsComponent } from './wallet-page/wallet-add-funds/wallet-add-funds.component';
@@ -12,7 +13,7 @@ const routes: Routes = [
   {path:'wallet-page', component:WalletPageComponent},
   {path:'login', component:WalletLoginComponent},
   {path:'wallet-admin', component:WalletAdminComponent},
-  {path:'wallet-balance', component:WalletBalanceComponent},
+  {path:'wallet-balance', component:WalletBalanceComponent, canActivate:[UserAuthGuard]},
   {path:'wallet-add-funds', component:WalletAddFundsComponent},
   {path:'wallet-withdraw', component:WalletWithdrawComponent},
   {path:'wallet-transfer', component:WalletFundTransferComponent},
